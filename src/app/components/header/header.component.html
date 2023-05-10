@@ -1,16 +1,16 @@
 <header class="header">
-    <mat-toolbar>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
-        </button>
+    <mat-toolbar color="primary">
         <span>BusinessCardApp</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
-        </button>
+      <ul class="header-menu">
+        <li>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Anasayfa</a>
+        </li>
+        <li>
+            <a routerLink="/about" routerLinkActive="active">Hakkında</a>
+        </li>
+        <li>
+            <a routerLink="/cards" routerLinkActive="active">Kartvizitler</a>
+        </li>
+      </ul>
     </mat-toolbar>
-
 </header>
