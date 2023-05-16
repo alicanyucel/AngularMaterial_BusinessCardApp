@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Card } from '../models/card';
+import { CardModalComponent } from './card-modal/card-modal.component';
 
 @Component({
   selector: 'app-cards',
@@ -24,6 +25,9 @@ constructor(
 }
   ngOnInit(): void {
   
+  }
+  openAddCardModal(){
+    this.dialog.open(CardModalComponent);
   }
 
 }

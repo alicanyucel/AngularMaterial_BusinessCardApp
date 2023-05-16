@@ -7,10 +7,12 @@ import {MatButtonModule} from '@angular/material/button';
 import { CardItemComponent } from './card-item/card-item.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogModule } from '@angular/cdk/dialog';
+import { CardModalComponent } from './card-modal/card-modal.component';
 @NgModule({
   declarations: [
     CardsComponent,
-    CardItemComponent
+    CardItemComponent,
+    CardModalComponent
   ],
   imports: [
     CommonModule,
