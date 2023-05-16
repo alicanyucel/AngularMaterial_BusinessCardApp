@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
   cardItem = {
-    title: 'Full Stack Developer -Msc Software Engineer',
+    title: 'Full Stack Developer - M.Sc. Software Engineer',
     name: 'Ali Can Yücel',
     phone: '0541 692 36 75',
     email: 'yucelalican@hotmail.com',
-    address: 'Pursaklar/Ankara'
+    address: 'Pursaklar/Ankara',
+    Linkedln:'https://www.linkedin.com/in/ali-can-y%C3%BCcel-062b6517a/',
+    Github: 'https://github.com/alicanyucel?tab=repositories',
   };
 
   ngOnInit(): void {
