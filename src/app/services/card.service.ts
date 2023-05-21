@@ -1,10 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Card } from '../models/card';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
-
-  constructor(private _httpClient:HttpClient) { }
+    constructor(
+      @Inject('apiUrl') private apiUrl:string,
+      private _http:HttpClient) { }
+  getCards():Observable<Card[]>{
+    return this._http.get<Card[]>(this.apiUrl +'/cards');
+  }
 }

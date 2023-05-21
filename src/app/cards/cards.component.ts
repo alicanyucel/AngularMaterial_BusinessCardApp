@@ -4,30 +4,27 @@ import { Card } from '../models/card';
 import { CardModalComponent } from './card-modal/card-modal.component';
 import { config } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { CardService } from '../services/card.service';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
-  cardItem:Card = {
-    title: 'Full Stack Developer - M.Sc. Software Engineer',
-    name: 'Ali Can Yücel',
-    phone: '0541 692 36 75',
-    email: 'yucelalican@hotmail.com',
-    address: 'Pursaklar/Ankara',
-    LinkedIn:'https://www.linkedin.com/in/ali-can-y%C3%BCcel-062b6517a/',
-    Github: 'https://github.com/alicanyucel?tab=repositories',
-  };
+cards:Card[];
 constructor(
-  public dialog:MatDialog
-){
-
-}
+  public dialog:MatDialog,
+  private _cardService:CardService
+){}
   ngOnInit(): void {
-  
+  this.getCards();
   }
   openAddCardModal():void{
     this.dialog.open(CardModalComponent)
     }
+    getCards():void{
+  this._cardService.getCards().subscribe((res:Card[])=>{
+    this.cards=res
+  });
+}
 }

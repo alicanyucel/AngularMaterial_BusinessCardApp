@@ -29,7 +29,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide:'apiUrl',
+    useValue:'https://demo.limantech.com/cards/public/api'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
