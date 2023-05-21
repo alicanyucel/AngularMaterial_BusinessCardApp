@@ -7,7 +7,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { CardItemComponent } from './card-item/card-item.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogModule } from '@angular/cdk/dialog';
+import { from, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { CardModalComponent } from './card-modal/card-modal.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     CardsComponent,
@@ -20,6 +23,7 @@ import { CardModalComponent } from './card-modal/card-modal.component';
     MatCardModule,
     MatButtonModule,
     DialogModule,
+    FormsModule,
     MatDialogModule,
   ]
 })

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Card } from '../models/card';
 import { CardModalComponent } from './card-modal/card-modal.component';
-
+import { config } from 'rxjs';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -26,8 +27,7 @@ constructor(
   ngOnInit(): void {
   
   }
-  openAddCardModal(){
-    this.dialog.open(CardModalComponent);
-  }
-
+  openAddCardModal():void{
+    this.dialog.open(CardModalComponent)
+    }
 }
