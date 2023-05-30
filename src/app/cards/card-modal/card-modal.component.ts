@@ -16,7 +16,7 @@ export class CardModalComponent implements OnInit {
       name:['',Validators.required],
       title: ['',Validators.required],
       phone:  ['',Validators.required],
-      email:['',Validators.required],
+      email:['',Validators.email],
       address:['',Validators.required],
     });
   }
