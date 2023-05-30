@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { CardService } from 'src/app/services/card.service';
 
 @Component({
   selector: 'app-card-modal',
@@ -9,7 +10,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class CardModalComponent implements OnInit {
   cardForm!: FormGroup
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private cardService:CardService) {
   }
   ngOnInit(): void {
     this.cardForm = this.fb.group({
@@ -19,5 +20,11 @@ export class CardModalComponent implements OnInit {
       email:['',[Validators.email,Validators.maxLength(50)]],
       address:['',[Validators.required,Validators.maxLength(255)]],
     });
+  }
+  addCard():void{
+    console.log(this.cardForm.value);
+    this.cardService.addCards(this.cardForm.value).subscribe((res:any)=>{
+    console.log(res);  
+    })
   }
 }

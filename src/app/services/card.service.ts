@@ -13,4 +13,7 @@ export class CardService {
   getCards():Observable<Card[]>{
     return this._http.get<Card[]>(this.apiUrl +'/cards');
   }
+  addCards(card:Card){
+    return this._http.post(this.apiUrl + '/cards',card);
+  }
 }
