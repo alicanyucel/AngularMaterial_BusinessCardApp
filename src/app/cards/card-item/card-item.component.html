@@ -5,9 +5,11 @@
     </mat-card-header>
     <mat-card-content>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{card.phone}}</li>
-        <li class="list-group-item">{{card.email}}</li>
-        <li class="list-group-item">{{card.address}}</li>
+            <li class="list-group-item">{{card.phone}}</li>
+            <li class="list-group-item">{{card.email}}</li>
+            <small class="text-warning" *ngIf="!card.email">Eposta Adresi Girilmemiş.</small>
+            <li class="list-group-item" *ngIf="card.address">{{card.address}}</li>
+            <small class="text-warning" *ngIf="!card.address">Adres Girilmemiş.</small>
         </ul>
     </mat-card-content>
 </mat-card>
