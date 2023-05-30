@@ -13,11 +13,11 @@ export class CardModalComponent implements OnInit {
   }
   ngOnInit(): void {
     this.cardForm = this.fb.group({
-      name:['',Validators.required],
-      title: ['',Validators.required],
-      phone:  ['',Validators.required],
-      email:['',Validators.email],
-      address:['',Validators.required],
+      name:['',[Validators.required,Validators.maxLength(50)]],
+      title: ['',[Validators.required,Validators.maxLength(255)]],
+      phone:  ['',[Validators.required,Validators.maxLength(20)]],
+      email:['',[Validators.email,Validators.maxLength(50)]],
+      address:['',[Validators.required,Validators.maxLength(255)]],
     });
   }
 }
